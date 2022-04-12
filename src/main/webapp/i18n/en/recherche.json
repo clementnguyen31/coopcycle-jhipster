@@ -1,0 +1,27 @@
+{
+  "myapplicationApp": {
+    "recherche": {
+      "home": {
+        "title": "Recherches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Recherche",
+        "createOrEditLabel": "Create or edit a Recherche",
+        "notFound": "No Recherches found"
+      },
+      "created": "A new Recherche is created with identifier {{ param }}",
+      "updated": "A Recherche is updated with identifier {{ param }}",
+      "deleted": "A Recherche is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Recherche {{ id }}?"
+      },
+      "detail": {
+        "title": "Recherche"
+      },
+      "id": "ID",
+      "rechercheId": "Recherche Id",
+      "rechercheThematique": "Recherche Thematique",
+      "rechercheGeographique": "Recherche Geographique",
+      "client": "Client"
+    }
+  }
+}

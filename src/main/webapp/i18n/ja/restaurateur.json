@@ -1,0 +1,30 @@
+{
+  "myapplicationApp": {
+    "restaurateur": {
+      "home": {
+        "title": "Restaurateurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Restaurateur を追加",
+        "createOrEditLabel": "Restaurateurを追加または編集",
+        "notFound": "No Restaurateurs found"
+      },
+      "created": "A new Restaurateur is created with identifier {{ param }}",
+      "updated": "A Restaurateur is updated with identifier {{ param }}",
+      "deleted": "A Restaurateur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Restaurateur {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Restaurateur"
+      },
+      "id": "ID",
+      "restaurateurId": "Restaurateur Id",
+      "restaurateurNom": "Restaurateur Nom",
+      "restaurateurPrenom": "Restaurateur Prenom",
+      "restaurateurBoutique": "Restaurateur Boutique",
+      "client": "Client",
+      "commande": "Commande",
+      "cooperative": "Cooperative"
+    }
+  }
+}

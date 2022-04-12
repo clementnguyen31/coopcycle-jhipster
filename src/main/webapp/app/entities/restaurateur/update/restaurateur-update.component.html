@@ -1,0 +1,119 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-restaurateur-heading"
+        data-cy="RestaurateurCreateUpdateHeading"
+        jhiTranslate="myapplicationApp.restaurateur.home.createOrEditLabel"
+      >
+        Create or edit a Restaurateur
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.restaurateur.restaurateurId" for="field_restaurateurId"
+            >Restaurateur Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="restaurateurId"
+            id="field_restaurateurId"
+            data-cy="restaurateurId"
+            formControlName="restaurateurId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.restaurateur.restaurateurNom" for="field_restaurateurNom"
+            >Restaurateur Nom</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="restaurateurNom"
+            id="field_restaurateurNom"
+            data-cy="restaurateurNom"
+            formControlName="restaurateurNom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.restaurateur.restaurateurPrenom" for="field_restaurateurPrenom"
+            >Restaurateur Prenom</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="restaurateurPrenom"
+            id="field_restaurateurPrenom"
+            data-cy="restaurateurPrenom"
+            formControlName="restaurateurPrenom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.restaurateur.restaurateurBoutique" for="field_restaurateurBoutique"
+            >Restaurateur Boutique</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="restaurateurBoutique"
+            id="field_restaurateurBoutique"
+            data-cy="restaurateurBoutique"
+            formControlName="restaurateurBoutique"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="myapplicationApp.restaurateur.client" for="field_clients">Client</label>
+          <select class="form-control" id="field_clients" data-cy="client" multiple name="clients" formControlName="clients">
+            <option
+              [ngValue]="getSelectedClient(clientOption, editForm.get('clients')!.value)"
+              *ngFor="let clientOption of clientsSharedCollection; trackBy: trackClientById"
+            >
+              {{ clientOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.restaurateur.commande" for="field_commande">Commande</label>
+          <select class="form-control" id="field_commande" data-cy="commande" name="commande" formControlName="commande">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="commandeOption.id === editForm.get('commande')!.value?.id ? editForm.get('commande')!.value : commandeOption"
+              *ngFor="let commandeOption of commandesSharedCollection; trackBy: trackCommandeById"
+            >
+              {{ commandeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

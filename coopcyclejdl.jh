@@ -1,0 +1,58 @@
+
+entity Cooperative {
+	cooperativeId Long,
+    cooperativeNom String,
+    cooperativeDirecteur String,
+    cooperativeVille String,
+    cooperativeMetropole String,
+	cooperativeCommune String
+}
+
+entity Restaurateur {
+	restaurateurId Long,
+    restaurateurNom String,
+    restaurateurPrenom String,
+    restaurateurBoutique String
+}
+
+entity Livreur {
+	livreurId Long,
+    livreurNom String,
+    livreurPrenom String,
+    livreurEmail String,
+    livreurAdresse String
+}
+
+entity Client {
+	clientId Long,
+    clientNom String,
+    clientPrenom String,
+    clientEmail String,
+    clientAdresse String
+}
+
+entity Commande {
+	commandeId Long,
+    commandeLieu String,
+    commandeEcheance String,
+    commandeLibelle String
+}
+
+entity Recherche {
+	rechercheId Long,
+    rechercheThematique String,
+    rechercheGeographique String
+}
+
+relationship ManyToMany {
+	Cooperative to Livreur
+    Cooperative to Restaurateur
+    Cooperative to Client
+	Restaurateur to Client
+    Client to Recherche
+}
+
+relationship OneToMany{
+	Commande to Client
+    Commande to Restaurateur
+}

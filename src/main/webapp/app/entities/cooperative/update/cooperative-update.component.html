@@ -1,0 +1,165 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-cooperative-heading"
+        data-cy="CooperativeCreateUpdateHeading"
+        jhiTranslate="myapplicationApp.cooperative.home.createOrEditLabel"
+      >
+        Create or edit a Cooperative
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeId" for="field_cooperativeId"
+            >Cooperative Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="cooperativeId"
+            id="field_cooperativeId"
+            data-cy="cooperativeId"
+            formControlName="cooperativeId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeNom" for="field_cooperativeNom"
+            >Cooperative Nom</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cooperativeNom"
+            id="field_cooperativeNom"
+            data-cy="cooperativeNom"
+            formControlName="cooperativeNom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeDirecteur" for="field_cooperativeDirecteur"
+            >Cooperative Directeur</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cooperativeDirecteur"
+            id="field_cooperativeDirecteur"
+            data-cy="cooperativeDirecteur"
+            formControlName="cooperativeDirecteur"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeVille" for="field_cooperativeVille"
+            >Cooperative Ville</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cooperativeVille"
+            id="field_cooperativeVille"
+            data-cy="cooperativeVille"
+            formControlName="cooperativeVille"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeMetropole" for="field_cooperativeMetropole"
+            >Cooperative Metropole</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cooperativeMetropole"
+            id="field_cooperativeMetropole"
+            data-cy="cooperativeMetropole"
+            formControlName="cooperativeMetropole"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.cooperative.cooperativeCommune" for="field_cooperativeCommune"
+            >Cooperative Commune</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cooperativeCommune"
+            id="field_cooperativeCommune"
+            data-cy="cooperativeCommune"
+            formControlName="cooperativeCommune"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="myapplicationApp.cooperative.livreur" for="field_livreurs">Livreur</label>
+          <select class="form-control" id="field_livreurs" data-cy="livreur" multiple name="livreurs" formControlName="livreurs">
+            <option
+              [ngValue]="getSelectedLivreur(livreurOption, editForm.get('livreurs')!.value)"
+              *ngFor="let livreurOption of livreursSharedCollection; trackBy: trackLivreurById"
+            >
+              {{ livreurOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="myapplicationApp.cooperative.restaurateur" for="field_restaurateurs">Restaurateur</label>
+          <select
+            class="form-control"
+            id="field_restaurateurs"
+            data-cy="restaurateur"
+            multiple
+            name="restaurateurs"
+            formControlName="restaurateurs"
+          >
+            <option
+              [ngValue]="getSelectedRestaurateur(restaurateurOption, editForm.get('restaurateurs')!.value)"
+              *ngFor="let restaurateurOption of restaurateursSharedCollection; trackBy: trackRestaurateurById"
+            >
+              {{ restaurateurOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="myapplicationApp.cooperative.client" for="field_clients">Client</label>
+          <select class="form-control" id="field_clients" data-cy="client" multiple name="clients" formControlName="clients">
+            <option
+              [ngValue]="getSelectedClient(clientOption, editForm.get('clients')!.value)"
+              *ngFor="let clientOption of clientsSharedCollection; trackBy: trackClientById"
+            >
+              {{ clientOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

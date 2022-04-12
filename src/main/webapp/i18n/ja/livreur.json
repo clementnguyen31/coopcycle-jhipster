@@ -1,0 +1,29 @@
+{
+  "myapplicationApp": {
+    "livreur": {
+      "home": {
+        "title": "Livreurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Livreur を追加",
+        "createOrEditLabel": "Livreurを追加または編集",
+        "notFound": "No Livreurs found"
+      },
+      "created": "A new Livreur is created with identifier {{ param }}",
+      "updated": "A Livreur is updated with identifier {{ param }}",
+      "deleted": "A Livreur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Livreur {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Livreur"
+      },
+      "id": "ID",
+      "livreurId": "Livreur Id",
+      "livreurNom": "Livreur Nom",
+      "livreurPrenom": "Livreur Prenom",
+      "livreurEmail": "Livreur Email",
+      "livreurAdresse": "Livreur Adresse",
+      "cooperative": "Cooperative"
+    }
+  }
+}
