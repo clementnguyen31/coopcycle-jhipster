@@ -1,0 +1,27 @@
+{
+  "myapplicationApp": {
+    "recherche": {
+      "home": {
+        "title": "Recherches",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Recherche を追加",
+        "createOrEditLabel": "Rechercheを追加または編集",
+        "notFound": "No Recherches found"
+      },
+      "created": "A new Recherche is created with identifier {{ param }}",
+      "updated": "A Recherche is updated with identifier {{ param }}",
+      "deleted": "A Recherche is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Recherche {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Recherche"
+      },
+      "id": "ID",
+      "rechercheId": "Recherche Id",
+      "rechercheThematique": "Recherche Thematique",
+      "rechercheGeographique": "Recherche Geographique",
+      "client": "Client"
+    }
+  }
+}

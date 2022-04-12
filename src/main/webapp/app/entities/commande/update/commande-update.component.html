@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-commande-heading" data-cy="CommandeCreateUpdateHeading" jhiTranslate="myapplicationApp.commande.home.createOrEditLabel">
+        Create or edit a Commande
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.commande.commandeId" for="field_commandeId">Commande Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="commandeId"
+            id="field_commandeId"
+            data-cy="commandeId"
+            formControlName="commandeId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.commande.commandeLieu" for="field_commandeLieu">Commande Lieu</label>
+          <input
+            type="text"
+            class="form-control"
+            name="commandeLieu"
+            id="field_commandeLieu"
+            data-cy="commandeLieu"
+            formControlName="commandeLieu"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.commande.commandeEcheance" for="field_commandeEcheance"
+            >Commande Echeance</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="commandeEcheance"
+            id="field_commandeEcheance"
+            data-cy="commandeEcheance"
+            formControlName="commandeEcheance"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.commande.commandeLibelle" for="field_commandeLibelle"
+            >Commande Libelle</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="commandeLibelle"
+            id="field_commandeLibelle"
+            data-cy="commandeLibelle"
+            formControlName="commandeLibelle"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

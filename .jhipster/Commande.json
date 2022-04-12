@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20220412203437",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "commande",
+  "fields": [
+    {
+      "fieldName": "commandeId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "commandeLieu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commandeEcheance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commandeLibelle",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commande",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "client",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "restaurateur",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "restaurateur",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-livreur-heading" data-cy="LivreurCreateUpdateHeading" jhiTranslate="myapplicationApp.livreur.home.createOrEditLabel">
+        Create or edit a Livreur
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.livreur.livreurId" for="field_livreurId">Livreur Id</label>
+          <input type="number" class="form-control" name="livreurId" id="field_livreurId" data-cy="livreurId" formControlName="livreurId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.livreur.livreurNom" for="field_livreurNom">Livreur Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurNom"
+            id="field_livreurNom"
+            data-cy="livreurNom"
+            formControlName="livreurNom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.livreur.livreurPrenom" for="field_livreurPrenom">Livreur Prenom</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurPrenom"
+            id="field_livreurPrenom"
+            data-cy="livreurPrenom"
+            formControlName="livreurPrenom"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.livreur.livreurEmail" for="field_livreurEmail">Livreur Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="livreurEmail"
+            id="field_livreurEmail"
+            data-cy="livreurEmail"
+            formControlName="livreurEmail"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="myapplicationApp.livreur.livreurAdresse" for="field_livreurAdresse"
+            >Livreur Adresse</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="livreurAdresse"
+            id="field_livreurAdresse"
+            data-cy="livreurAdresse"
+            formControlName="livreurAdresse"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
