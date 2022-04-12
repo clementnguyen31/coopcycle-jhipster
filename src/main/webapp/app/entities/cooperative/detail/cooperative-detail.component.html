@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cooperative">
+      <h2 data-cy="cooperativeDetailsHeading"><span jhiTranslate="myapplicationApp.cooperative.detail.title">Cooperative</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cooperative.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeId">Cooperative Id</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeNom">Cooperative Nom</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeNom }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeDirecteur">Cooperative Directeur</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeDirecteur }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeVille">Cooperative Ville</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeVille }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeMetropole">Cooperative Metropole</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeMetropole }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.cooperativeCommune">Cooperative Commune</span></dt>
+        <dd>
+          <span>{{ cooperative.cooperativeCommune }}</span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.livreur">Livreur</span></dt>
+        <dd>
+          <span *ngFor="let livreur of cooperative.livreurs; let last = last">
+            <a [routerLink]="['/livreur', livreur?.id, 'view']">{{ livreur.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.restaurateur">Restaurateur</span></dt>
+        <dd>
+          <span *ngFor="let restaurateur of cooperative.restaurateurs; let last = last">
+            <a [routerLink]="['/restaurateur', restaurateur?.id, 'view']">{{ restaurateur.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="myapplicationApp.cooperative.client">Client</span></dt>
+        <dd>
+          <span *ngFor="let client of cooperative.clients; let last = last">
+            <a [routerLink]="['/client', client?.id, 'view']">{{ client.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cooperative', cooperative.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

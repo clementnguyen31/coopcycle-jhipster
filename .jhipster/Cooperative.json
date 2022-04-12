@@ -1,0 +1,62 @@
+{
+  "applications": "*",
+  "changelogDate": "20220412203149",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cooperative",
+  "fields": [
+    {
+      "fieldName": "cooperativeId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cooperativeNom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cooperativeDirecteur",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cooperativeVille",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cooperativeMetropole",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cooperativeCommune",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cooperative",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "livreur",
+      "otherEntityRelationshipName": "cooperative",
+      "ownerSide": true,
+      "relationshipName": "livreur",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "restaurateur",
+      "otherEntityRelationshipName": "cooperative",
+      "ownerSide": true,
+      "relationshipName": "restaurateur",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "cooperative",
+      "ownerSide": true,
+      "relationshipName": "client",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

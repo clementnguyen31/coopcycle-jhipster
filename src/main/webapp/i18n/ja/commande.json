@@ -1,0 +1,29 @@
+{
+  "myapplicationApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Commande を追加",
+        "createOrEditLabel": "Commandeを追加または編集",
+        "notFound": "No Commandes found"
+      },
+      "created": "A new Commande is created with identifier {{ param }}",
+      "updated": "A Commande is updated with identifier {{ param }}",
+      "deleted": "A Commande is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Commande {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "id": "ID",
+      "commandeId": "Commande Id",
+      "commandeLieu": "Commande Lieu",
+      "commandeEcheance": "Commande Echeance",
+      "commandeLibelle": "Commande Libelle",
+      "client": "Client",
+      "restaurateur": "Restaurateur"
+    }
+  }
+}

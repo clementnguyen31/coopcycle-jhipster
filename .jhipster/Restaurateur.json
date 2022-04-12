@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220412203150",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "restaurateur",
+  "fields": [
+    {
+      "fieldName": "restaurateurId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "restaurateurNom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "restaurateurPrenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "restaurateurBoutique",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Restaurateur",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "restaurateur",
+      "ownerSide": true,
+      "relationshipName": "client",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "restaurateur",
+      "relationshipName": "commande",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "restaurateur",
+      "ownerSide": false,
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

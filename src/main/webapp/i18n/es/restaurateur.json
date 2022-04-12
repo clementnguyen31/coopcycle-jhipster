@@ -1,0 +1,30 @@
+{
+  "myapplicationApp": {
+    "restaurateur": {
+      "home": {
+        "title": "Restaurateurs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Restaurateur",
+        "createOrEditLabel": "Crear o editar Restaurateur",
+        "notFound": "Ningún Restaurateurs encontrado"
+      },
+      "created": "Un nuevo Restaurateur ha sido creado con el identificador {{ param }}",
+      "updated": "Un Restaurateur ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Restaurateur ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Restaurateur {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurateur"
+      },
+      "id": "ID",
+      "restaurateurId": "Restaurateur Id",
+      "restaurateurNom": "Restaurateur Nom",
+      "restaurateurPrenom": "Restaurateur Prenom",
+      "restaurateurBoutique": "Restaurateur Boutique",
+      "client": "Client",
+      "commande": "Commande",
+      "cooperative": "Cooperative"
+    }
+  }
+}

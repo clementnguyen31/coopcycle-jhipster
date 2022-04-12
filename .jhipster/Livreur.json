@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220412203151",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "livreur",
+  "fields": [
+    {
+      "fieldName": "livreurId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "livreurNom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livreurPrenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livreurEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livreurAdresse",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Livreur",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "livreur",
+      "ownerSide": false,
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220412203152",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "client",
+  "fields": [
+    {
+      "fieldName": "clientId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "clientNom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientPrenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientAdresse",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Client",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "recherche",
+      "otherEntityRelationshipName": "client",
+      "ownerSide": true,
+      "relationshipName": "recherche",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "commande",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "client",
+      "ownerSide": false,
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "restaurateur",
+      "otherEntityRelationshipName": "client",
+      "ownerSide": false,
+      "relationshipName": "restaurateur",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}
